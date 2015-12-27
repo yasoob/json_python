@@ -22,6 +22,9 @@ url = "http://jsonplaceholder.typicode.com/posts/{}".format(user_id)
 try:
 	data = requests.get(url).json()
 except requests.exceptions.ConnectionError as e:
+	print("[Error] There was a network error")
 	print(e)
+	sys.exit()
+
 print('[Title]:  '+data['title'])
 print('[Body]:   '+data['body'])
