@@ -12,10 +12,10 @@ except ValueError as e:
 	print("[Error] Please input an integer from 0 to 100")
 	sys.exit(-1)
 
-if user_id < 100:
+if user_id <= 100 and user_id >= 0:
     user_id = sys.argv[-1]
 else:
-    print('[Help] The user_id needs to be less than 101')
+    print('[Help] The user_id needs to be less than 101 and greater than or equal to 0')
     sys.exit()
 
 url = "http://jsonplaceholder.typicode.com/posts/{}".format(user_id)
